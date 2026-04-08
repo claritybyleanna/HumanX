@@ -97,21 +97,21 @@
   </header>
 
   <!-- ═══════════ HERO SECTION ═══════════ -->
-  <section class="gradient-hero pt-20 pb-16 sm:pt-24 sm:pb-20 relative overflow-hidden">
-    <div class="absolute top-0 right-0 w-72 h-72 rounded-full bg-green-900/20 blur-3xl -translate-y-1/3 translate-x-1/4"></div>
-    <div class="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-purple-900/20 blur-3xl translate-y-1/2 -translate-x-1/4"></div>
+  <section class="relative overflow-hidden">
+    <!-- Background image -->
+    <div class="absolute inset-0">
+      <img
+        src="images/kaindly-humanx-banner.png"
+        alt=""
+        aria-hidden="true"
+        class="w-full h-full object-cover scale-110 blur-md"
+        loading="eager"
+      >
+      <!-- Dark overlay gradient: subtle at top, solid at bottom -->
+      <div class="absolute inset-0 bg-gradient-to-b from-kaindly-dark/50 via-kaindly-dark/60 to-kaindly-dark"></div>
+    </div>
 
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-      <!-- Hero banner image -->
-      <div class="mb-10 rounded-lg overflow-hidden">
-        <img
-          src="images/kaindly-humanx-banner.png"
-          alt="KAINDLY is attending HumanX — April 6–9, 2026, San Francisco"
-          class="w-full h-auto object-cover"
-          loading="eager"
-        >
-      </div>
-
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-16 sm:pb-24">
       <!-- Title -->
       <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[0.95] mb-6">
         <span class="text-white">HUMAN</span><span class="text-kaindly-lime">[X]</span>
@@ -119,17 +119,17 @@
       </h1>
 
       <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-8">
-        <span class="font-mono text-sm sm:text-base tracking-wider text-kaindly-text/70 uppercase">San Francisco</span>
+        <span class="font-mono text-sm sm:text-base tracking-wider text-white/70 uppercase">San Francisco</span>
         <span class="font-mono text-sm sm:text-base tracking-wider text-kaindly-lime font-bold uppercase">April 6–9, 2026</span>
       </div>
 
-      <div class="w-full h-px bg-gradient-to-r from-kaindly-purple via-kaindly-purple/40 to-transparent mb-8"></div>
+      <div class="w-full h-px bg-gradient-to-r from-kaindly-lime/40 via-kaindly-purple/40 to-transparent mb-8"></div>
 
-      <p class="font-mono text-xs tracking-widest text-kaindly-purple-light uppercase mb-4">Daily Readouts — The Plain-Language Version</p>
+      <p class="font-mono text-xs tracking-widest text-kaindly-lime uppercase mb-4">Daily Readouts — The Plain-Language Version</p>
       <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-snug max-w-4xl mb-4">
         What happened at the biggest AI conference — and what it actually means for your work
       </h2>
-      <p class="text-lg text-kaindly-text-bright/80 max-w-3xl font-light italic">
+      <p class="text-lg text-white/70 max-w-3xl font-light italic">
         You don't need to be technical to understand this. That's the whole point.
       </p>
     </div>
@@ -162,7 +162,7 @@
             </div>
           </div>
           <div class="p-5">
-            <p class="font-mono text-xs text-kaindly-text/50 mb-2">April 7, 2026</p>
+            <p class="font-mono text-xs text-kaindly-text/50 mb-2">April 6, 2026</p>
             <h3 class="text-lg font-bold text-white mb-2 group-hover:text-kaindly-lime transition-colors">What happened at the biggest AI conference — and what it actually means for your work</h3>
             <p class="text-sm text-kaindly-text leading-relaxed">Spatial AI, the five-layer AI stack, and why marketing is the canary in the coal mine for every other function.</p>
             <p class="font-mono text-xs text-kaindly-lime mt-3 group-hover:translate-x-1 transition-transform inline-block">Read Day 1 &rarr;</p>
@@ -186,7 +186,7 @@
             </div>
           </div>
           <div class="p-5">
-            <p class="font-mono text-xs text-kaindly-text/50 mb-2">April 8, 2026</p>
+            <p class="font-mono text-xs text-kaindly-text/50 mb-2">April 7, 2026</p>
             <h3 class="text-lg font-bold text-white mb-2 group-hover:text-kaindly-lime transition-colors">AI stopped being a concept. On Day 2, it started being a coworker.</h3>
             <p class="text-sm text-kaindly-text leading-relaxed">Agentic AI, how the organizations winning at AI figured out deployment, and why governance stopped being optional.</p>
             <p class="font-mono text-xs text-kaindly-lime mt-3 group-hover:translate-x-1 transition-transform inline-block">Read Day 2 &rarr;</p>
@@ -204,7 +204,7 @@
             </div>
           </div>
           <div class="p-5">
-            <p class="font-mono text-xs text-kaindly-text/30 mb-2">April 9, 2026</p>
+            <p class="font-mono text-xs text-kaindly-text/30 mb-2">April 8, 2026</p>
             <h3 class="text-lg font-bold text-kaindly-text/40 mb-2">Day 3 readout in progress</h3>
             <p class="text-sm text-kaindly-text/30 leading-relaxed">We're on the ground. This readout will be published after the sessions wrap.</p>
           </div>
@@ -221,7 +221,7 @@
             </div>
           </div>
           <div class="p-5">
-            <p class="font-mono text-xs text-kaindly-text/30 mb-2">April 10, 2026</p>
+            <p class="font-mono text-xs text-kaindly-text/30 mb-2">April 9, 2026</p>
             <h3 class="text-lg font-bold text-kaindly-text/40 mb-2">Day 4 readout in progress</h3>
             <p class="text-sm text-kaindly-text/30 leading-relaxed">The final day. Full wrap-up and key themes across the conference.</p>
           </div>
@@ -234,9 +234,9 @@
   <!-- ═══════════ YOUR GUIDES ═══════════ -->
   <section class="py-14 sm:py-20 section-fade">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
-      <p class="font-mono text-xs tracking-widest text-kaindly-purple-light uppercase mb-3">Your Guides This Week</p>
+      <p class="font-mono text-xs tracking-widest text-kaindly-purple-light uppercase mb-3">KAINDLY at HumanX</p>
       <h2 class="text-3xl sm:text-4xl font-black text-white leading-tight mb-10">
-        ON THE <span class="text-kaindly-lime">GROUND</span>
+        YOUR GUIDES <span class="text-kaindly-lime">ON THE GROUND</span>
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -245,13 +245,13 @@
           <div class="aspect-square overflow-hidden">
             <img
               src="images/barbra-headshot.jpeg"
-              alt="Barbara Tinotenda Gwindingwi, Co-Founder and CEO of KAINDLY"
+              alt="Barbara Salami, Co-Founder and CEO of KAINDLY"
               class="w-full h-full object-cover img-treatment"
               loading="lazy"
             >
           </div>
           <div class="p-6">
-            <h3 class="text-xl font-bold text-white mb-1">Barbara Tinotenda Gwindingwi</h3>
+            <h3 class="text-xl font-bold text-white mb-1">Barbara Salami</h3>
             <p class="font-mono text-xs text-kaindly-lime uppercase tracking-wider mb-3">Co-Founder & CEO</p>
             <p class="text-kaindly-text leading-relaxed text-sm">Barbara brings decades of experience navigating complex organizational change with a focus on inclusion and sustainable impact. She has spent her career working at the intersection of strategy, people, and systems — always with an eye toward who gets left behind when change moves too fast.</p>
           </div>
