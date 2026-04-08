@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KAINDLY at HumanX — Day 1 | The Plain-Language Version</title>
-  <meta name="description" content="What happened at the biggest AI conference — and what it actually means for your work. The plain-language Day 1 readout from KAINDLY.">
+  <title>KAINDLY at HumanX 2026 — Daily Readouts</title>
+  <meta name="description" content="KAINDLY's plain-language daily readouts from HumanX 2026 — the biggest AI conference in the world. What happened, what it means for your work.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,6 +43,17 @@
     .card-glow:hover {
       box-shadow: 0 0 30px rgba(90,47,168,0.15);
     }
+    .day-card-live {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .day-card-live:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(90,47,168,0.2);
+    }
+    .day-card-coming {
+      opacity: 0.4;
+      filter: grayscale(0.3);
+    }
     .lime-glow {
       box-shadow: 0 0 20px rgba(200,255,0,0.1);
     }
@@ -52,101 +63,13 @@
     .img-treatment {
       filter: brightness(0.95) contrast(1.05);
     }
-
-    /* ── Glossary tooltip styles ── */
-    dfn[data-definition] {
-      font-style: normal;
-      text-decoration: underline;
-      text-decoration-style: dotted;
-      text-decoration-color: #7B4FCC;
-      text-underline-offset: 3px;
-      cursor: help;
-      position: relative;
-      color: #E0E0F0;
+    .pulse-dot {
+      animation: pulse 2s ease-in-out infinite;
     }
-    dfn[data-definition]::after {
-      content: ' (?)';
-      font-size: 0.7em;
-      color: #7B4FCC;
-      font-weight: 600;
-      vertical-align: super;
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
     }
-    /* Mobile: tooltip below the term, full-width constrained */
-    dfn[data-definition] .dfn-tooltip {
-      display: none;
-      position: absolute;
-      top: calc(100% + 8px);
-      left: 0;
-      right: auto;
-      transform: none;
-      background: #1A1A33;
-      border: 1px solid #5A2FA8;
-      border-radius: 8px;
-      padding: 10px 14px;
-      font-size: 0.85rem;
-      line-height: 1.5;
-      color: #E0E0F0;
-      width: max-content;
-      max-width: min(280px, 80vw);
-      z-index: 40;
-      box-shadow: 0 4px 20px rgba(90,47,168,0.25);
-      pointer-events: none;
-    }
-    dfn[data-definition] .dfn-tooltip::after {
-      content: '';
-      position: absolute;
-      bottom: 100%;
-      left: 20px;
-      border: 6px solid transparent;
-      border-bottom-color: #5A2FA8;
-    }
-    /* Desktop: tooltip above the term, centered */
-    @media (min-width: 768px) {
-      dfn[data-definition] .dfn-tooltip {
-        top: auto;
-        bottom: calc(100% + 8px);
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
-      }
-      dfn[data-definition] .dfn-tooltip::after {
-        bottom: auto;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        border: 6px solid transparent;
-        border-top-color: #5A2FA8;
-        border-bottom-color: transparent;
-      }
-    }
-    dfn[data-definition]:hover .dfn-tooltip,
-    dfn[data-definition]:focus .dfn-tooltip {
-      display: block;
-    }
-
-    /* ── Glossary sidebar ── */
-    .glossary-sidebar {
-      font-size: 0.875rem;
-    }
-    .glossary-sidebar dt {
-      color: #C8FF00;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-top: 1rem;
-    }
-    .glossary-sidebar dt:first-child {
-      margin-top: 0;
-    }
-    .glossary-sidebar dd {
-      color: #B8B8D0;
-      margin-left: 0;
-      margin-top: 0.25rem;
-      line-height: 1.5;
-    }
-
     @media print {
       body { background: white; color: #1a1a1a; }
       .no-print { display: none; }
@@ -164,415 +87,300 @@
         <span class="font-mono text-xs tracking-widest text-kaindly-text/60 uppercase">Live Coverage</span>
       </div>
       <div class="flex items-center gap-4">
-        <a href="day2.html" class="font-mono text-xs tracking-widest text-kaindly-lime uppercase hover:text-kaindly-lime/80 transition-colors hidden sm:block">Day 2 &rarr;</a>
         <span class="font-mono text-xs tracking-widest text-kaindly-text/60 uppercase hidden sm:block">HUMAN[X] 2026</span>
+        <span class="inline-flex items-center gap-1.5 font-mono text-xs text-kaindly-lime uppercase">
+          <span class="w-2 h-2 rounded-full bg-kaindly-lime pulse-dot"></span>
+          Live
+        </span>
       </div>
     </div>
   </header>
 
   <!-- ═══════════ HERO SECTION ═══════════ -->
   <section class="gradient-hero pt-20 pb-16 sm:pt-24 sm:pb-20 relative overflow-hidden">
-    <!-- Decorative circles -->
     <div class="absolute top-0 right-0 w-72 h-72 rounded-full bg-green-900/20 blur-3xl -translate-y-1/3 translate-x-1/4"></div>
     <div class="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-purple-900/20 blur-3xl translate-y-1/2 -translate-x-1/4"></div>
 
     <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-      <!-- Hero image -->
+      <!-- Hero banner image -->
       <div class="mb-10 rounded-lg overflow-hidden">
         <img
-          src="images/humanx-banner.jpeg"
-          alt="HumanX 2026 venue entrance with signature [X] banner"
-          class="w-full h-48 sm:h-64 md:h-80 object-cover img-treatment"
+          src="images/kaindly-humanx-banner.png"
+          alt="KAINDLY is attending HumanX — April 6–9, 2026, San Francisco"
+          class="w-full h-auto object-cover"
           loading="eager"
         >
       </div>
 
-      <!-- Big title -->
+      <!-- Title -->
       <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[0.95] mb-6">
         <span class="text-white">HUMAN</span><span class="text-kaindly-lime">[X]</span>
+        <span class="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl"> 2026</span>
       </h1>
+
       <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-8">
         <span class="font-mono text-sm sm:text-base tracking-wider text-kaindly-text/70 uppercase">San Francisco</span>
         <span class="font-mono text-sm sm:text-base tracking-wider text-kaindly-lime font-bold uppercase">April 6–9, 2026</span>
       </div>
 
-      <!-- Divider -->
       <div class="w-full h-px bg-gradient-to-r from-kaindly-purple via-kaindly-purple/40 to-transparent mb-8"></div>
 
-      <!-- Article title & meta -->
-      <p class="font-mono text-xs tracking-widest text-kaindly-purple-light uppercase mb-4">Day 1 — The Plain-Language Version</p>
+      <p class="font-mono text-xs tracking-widest text-kaindly-purple-light uppercase mb-4">Daily Readouts — The Plain-Language Version</p>
       <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-snug max-w-4xl mb-4">
         What happened at the biggest AI conference — and what it actually means for your work
       </h2>
-      <p class="text-lg text-kaindly-text-bright/80 max-w-3xl mb-6 font-light italic">
+      <p class="text-lg text-kaindly-text-bright/80 max-w-3xl font-light italic">
         You don't need to be technical to understand this. That's the whole point.
       </p>
-      <div class="flex flex-wrap items-center gap-3 text-sm text-kaindly-text/60 font-mono">
-        <span>April 7, 2026</span>
-        <span class="text-kaindly-purple">|</span>
-        <span>Leanna Baker Williams</span>
-        <span class="text-kaindly-purple">|</span>
-        <span>KAINDLY Collective</span>
-      </div>
     </div>
   </section>
 
-  <!-- ═══════════ OPENING ═══════════ -->
+  <!-- ═══════════ DAY CARDS ═══════════ -->
   <section class="py-14 sm:py-20">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6">
-      <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-kaindly-text-bright font-light">
-        The world's biggest AI conference just kicked off in San Francisco. You don't need to have been there — or even follow AI closely — to care about what happened. Three things came up on Day 1 that will affect how your organization works, spends money, and makes decisions about technology. Here's what they are, in plain English.
-      </p>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <p class="font-mono text-xs tracking-widest text-kaindly-purple-light uppercase mb-3">Select a Day</p>
+      <h2 class="text-3xl sm:text-4xl font-black text-white leading-tight mb-10">
+        FOUR DAYS.<br><span class="text-kaindly-lime">ONE READOUT EACH.</span>
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+        <!-- Day 1 — Live -->
+        <a href="day1.html" class="day-card-live bg-kaindly-card rounded-xl border border-kaindly-border overflow-hidden block group">
+          <div class="relative">
+            <img
+              src="images/humanx-banner.jpeg"
+              alt="HumanX 2026 Day 1 venue"
+              class="w-full h-44 object-cover img-treatment group-hover:brightness-110 transition-all"
+              loading="lazy"
+            >
+            <div class="absolute top-3 left-3 bg-kaindly-dark/80 backdrop-blur-sm px-3 py-1 rounded-md">
+              <span class="font-mono text-kaindly-lime text-sm font-bold">DAY 1</span>
+            </div>
+            <div class="absolute top-3 right-3 bg-kaindly-lime/20 backdrop-blur-sm px-2.5 py-1 rounded-md">
+              <span class="font-mono text-kaindly-lime text-xs font-bold uppercase">Live</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <p class="font-mono text-xs text-kaindly-text/50 mb-2">April 7, 2026</p>
+            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-kaindly-lime transition-colors">What happened at the biggest AI conference — and what it actually means for your work</h3>
+            <p class="text-sm text-kaindly-text leading-relaxed">Spatial AI, the five-layer AI stack, and why marketing is the canary in the coal mine for every other function.</p>
+            <p class="font-mono text-xs text-kaindly-lime mt-3 group-hover:translate-x-1 transition-transform inline-block">Read Day 1 &rarr;</p>
+          </div>
+        </a>
+
+        <!-- Day 2 — Live -->
+        <a href="day2.html" class="day-card-live bg-kaindly-card rounded-xl border border-kaindly-border overflow-hidden block group">
+          <div class="relative">
+            <img
+              src="images/day2-header.jpeg"
+              alt="HumanX 2026 Day 2 stage"
+              class="w-full h-44 object-cover img-treatment group-hover:brightness-110 transition-all"
+              loading="lazy"
+            >
+            <div class="absolute top-3 left-3 bg-kaindly-dark/80 backdrop-blur-sm px-3 py-1 rounded-md">
+              <span class="font-mono text-kaindly-lime text-sm font-bold">DAY 2</span>
+            </div>
+            <div class="absolute top-3 right-3 bg-kaindly-lime/20 backdrop-blur-sm px-2.5 py-1 rounded-md">
+              <span class="font-mono text-kaindly-lime text-xs font-bold uppercase">Live</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <p class="font-mono text-xs text-kaindly-text/50 mb-2">April 8, 2026</p>
+            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-kaindly-lime transition-colors">AI stopped being a concept. On Day 2, it started being a coworker.</h3>
+            <p class="text-sm text-kaindly-text leading-relaxed">Agentic AI, how the organizations winning at AI figured out deployment, and why governance stopped being optional.</p>
+            <p class="font-mono text-xs text-kaindly-lime mt-3 group-hover:translate-x-1 transition-transform inline-block">Read Day 2 &rarr;</p>
+          </div>
+        </a>
+
+        <!-- Day 3 — Coming Soon -->
+        <div class="day-card-coming bg-kaindly-card rounded-xl border border-kaindly-border overflow-hidden">
+          <div class="relative">
+            <div class="w-full h-44 bg-kaindly-card-alt flex items-center justify-center">
+              <span class="font-mono text-kaindly-text/30 text-sm uppercase tracking-widest">Coming Soon</span>
+            </div>
+            <div class="absolute top-3 left-3 bg-kaindly-dark/80 backdrop-blur-sm px-3 py-1 rounded-md">
+              <span class="font-mono text-kaindly-text/50 text-sm font-bold">DAY 3</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <p class="font-mono text-xs text-kaindly-text/30 mb-2">April 9, 2026</p>
+            <h3 class="text-lg font-bold text-kaindly-text/40 mb-2">Day 3 readout in progress</h3>
+            <p class="text-sm text-kaindly-text/30 leading-relaxed">We're on the ground. This readout will be published after the sessions wrap.</p>
+          </div>
+        </div>
+
+        <!-- Day 4 — Coming Soon -->
+        <div class="day-card-coming bg-kaindly-card rounded-xl border border-kaindly-border overflow-hidden">
+          <div class="relative">
+            <div class="w-full h-44 bg-kaindly-card-alt flex items-center justify-center">
+              <span class="font-mono text-kaindly-text/30 text-sm uppercase tracking-widest">Coming Soon</span>
+            </div>
+            <div class="absolute top-3 left-3 bg-kaindly-dark/80 backdrop-blur-sm px-3 py-1 rounded-md">
+              <span class="font-mono text-kaindly-text/50 text-sm font-bold">DAY 4</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <p class="font-mono text-xs text-kaindly-text/30 mb-2">April 10, 2026</p>
+            <h3 class="text-lg font-bold text-kaindly-text/40 mb-2">Day 4 readout in progress</h3>
+            <p class="text-sm text-kaindly-text/30 leading-relaxed">The final day. Full wrap-up and key themes across the conference.</p>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- ═══════════ MOBILE GLOSSARY (collapsible, shows < lg) ═══════════ -->
-  <div class="lg:hidden max-w-5xl mx-auto px-4 sm:px-6 mb-8">
-    <details class="bg-kaindly-card rounded-xl border border-kaindly-border overflow-hidden">
-      <summary class="px-5 py-4 cursor-pointer font-mono text-xs tracking-widest text-kaindly-lime uppercase font-bold flex items-center justify-between">
-        Quick Glossary — 10 Terms You'll See Below
-        <svg class="w-4 h-4 text-kaindly-lime transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-      </summary>
-      <div class="px-5 pb-5 glossary-sidebar">
-        <dl>
-          <dt>AI</dt>
-          <dd>Artificial intelligence — software that can learn from data and make decisions or predictions, rather than just following fixed rules.</dd>
-          <dt>Language Model</dt>
-          <dd>An AI system trained on text that can read, write, summarize, and answer questions. ChatGPT is the most well-known example.</dd>
-          <dt>Spatial AI</dt>
-          <dd>AI that understands physical, three-dimensional spaces — not just text and images, but rooms, buildings, objects, and how they relate to each other.</dd>
-          <dt>AI Stack</dt>
-          <dd>The layers of technology that make AI work — from the computer chips at the bottom to the apps you use at the top. Think of it like a building: foundation, structure, plumbing, wiring, and the rooms you actually live in.</dd>
-          <dt>Inference</dt>
-          <dd>When an AI model actually runs and gives you an answer. Every time you ask ChatGPT a question, that's inference. It costs money each time.</dd>
-          <dt>Compute</dt>
-          <dd>The raw computing power (usually specialized chips called GPUs) needed to train and run AI. It's expensive, and who controls it matters.</dd>
-          <dt>Fine-Tuning</dt>
-          <dd>Taking a general-purpose AI model and customizing it with your own data so it works better for your specific needs.</dd>
-          <dt>Generative AI</dt>
-          <dd>AI that creates new content — text, images, video, code — rather than just analyzing existing data. Most of the AI tools you hear about today are generative.</dd>
-          <dt>Personalization</dt>
-          <dd>Using data about a specific person to tailor what they see, read, or experience. AI makes this possible at massive scale.</dd>
-          <dt>A/B Testing</dt>
-          <dd>Showing two different versions of something (an email, a webpage, an ad) to different groups and measuring which performs better.</dd>
-        </dl>
+  <!-- ═══════════ YOUR GUIDES ═══════════ -->
+  <section class="py-14 sm:py-20 section-fade">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <p class="font-mono text-xs tracking-widest text-kaindly-purple-light uppercase mb-3">Your Guides This Week</p>
+      <h2 class="text-3xl sm:text-4xl font-black text-white leading-tight mb-10">
+        ON THE <span class="text-kaindly-lime">GROUND</span>
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Leanna -->
+        <div class="bg-kaindly-card rounded-xl border border-kaindly-border overflow-hidden">
+          <div class="aspect-square overflow-hidden">
+            <img
+              src="images/leanna-headshot.jpeg"
+              alt="Leanna Baker Williams, Co-Founder and COO of KAINDLY"
+              class="w-full h-full object-cover img-treatment"
+              loading="lazy"
+            >
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-1">Leanna Baker Williams</h3>
+            <p class="font-mono text-xs text-kaindly-lime uppercase tracking-wider mb-3">Co-Founder & COO</p>
+            <p class="text-kaindly-text leading-relaxed text-sm">Pharmacist, MBA candidate, and Digital Solutions Lead at Cencora — bringing a rare combination of healthcare, business, and technology fluency. At KAINDLY, she translates the complexity of AI into language that leaders can actually use. These readouts are written from her perspective.</p>
+          </div>
+        </div>
+
+        <!-- Barbra -->
+        <div class="bg-kaindly-card rounded-xl border border-kaindly-border overflow-hidden">
+          <div class="aspect-square overflow-hidden">
+            <img
+              src="images/barbra-headshot.jpeg"
+              alt="Barbra Tinotenda Gwindingwi, Co-Founder and CEO of KAINDLY"
+              class="w-full h-full object-cover img-treatment"
+              loading="lazy"
+            >
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-1">Barbra Tinotenda Gwindingwi</h3>
+            <p class="font-mono text-xs text-kaindly-lime uppercase tracking-wider mb-3">Co-Founder & CEO</p>
+            <p class="text-kaindly-text leading-relaxed text-sm">Barbra brings deep expertise in AI strategy and organizational transformation. She works directly with leadership teams navigating AI adoption — helping them move from uncertainty to clarity. At HumanX, she's asking the questions your team would ask, and connecting the dots between stage and practice.</p>
+          </div>
+        </div>
       </div>
-    </details>
-  </div>
 
-  <!-- ═══════════ TWO-COLUMN LAYOUT: CONTENT + SIDEBAR ═══════════ -->
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+      <!-- On the ground photo -->
+      <div class="mt-10 rounded-xl overflow-hidden">
+        <img
+          src="images/IMG_9967.jpg"
+          alt="Barbra and Leanna on the ground at HumanX 2026 in San Francisco"
+          class="w-full h-64 sm:h-80 object-cover img-treatment"
+          loading="lazy"
+        >
+        <p class="text-xs text-kaindly-text/40 mt-3 italic">On the ground — San Francisco, April 2026</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- ─── MAIN CONTENT COLUMN ─── -->
-    <div>
-
-      <!-- ═══════════ THREE TAKEAWAYS ═══════════ -->
-      <section class="pb-14 sm:pb-20 section-fade">
-        <div class="mb-12 sm:mb-16">
-          <p class="font-mono text-xs tracking-widest text-kaindly-purple-light uppercase mb-3">What You Need to Know</p>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight">
-            THREE<br><span class="text-kaindly-lime">TAKEAWAYS</span>
+  <!-- ═══════════ ABOUT KAINDLY ═══════════ -->
+  <section class="py-14 sm:py-20 section-fade">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="md:flex md:gap-12 md:items-center">
+        <div class="md:w-1/2 mb-8 md:mb-0">
+          <p class="font-mono text-xs tracking-widest text-kaindly-purple-light uppercase mb-3">About</p>
+          <h2 class="text-3xl sm:text-4xl font-black leading-tight mb-6">
+            <span class="text-kaindly-lime">KAINDLY</span>
           </h2>
-        </div>
-
-        <!-- ─── Card 1: Spatial AI ─── -->
-        <article class="bg-kaindly-card rounded-xl border border-kaindly-border overflow-hidden mb-8 card-glow transition-shadow duration-300">
-          <div class="md:flex">
-            <div class="md:w-2/5 relative">
-              <img
-                src="images/fei-fei.jpeg"
-                alt="Dr. Fei-Fei Li on stage at HumanX 2026"
-                class="w-full h-56 md:h-full object-cover img-treatment"
-                loading="lazy"
-              >
-              <div class="absolute top-4 left-4 bg-kaindly-dark/80 backdrop-blur-sm px-3 py-1.5 rounded-md">
-                <span class="font-mono text-kaindly-lime text-2xl font-bold">01</span>
-              </div>
-            </div>
-            <div class="md:w-3/5 p-6 sm:p-8 border-l-4 border-kaindly-purple">
-              <h3 class="text-xl sm:text-2xl font-bold text-white mb-5">AI Is Learning to Understand Physical Spaces</h3>
-
-              <div class="space-y-5">
-                <div>
-                  <p class="font-mono text-xs tracking-widest text-kaindly-lime uppercase mb-2">What Happened</p>
-                  <p class="text-kaindly-text leading-relaxed">Fei-Fei Li — often called the Godmother of AI — took the stage to present the vision behind World Labs, her <dfn data-definition tabindex="0">spatial AI<span class="dfn-tooltip">AI that understands physical, three-dimensional spaces — not just text and images, but rooms, buildings, objects, and how they relate to each other.</span></dfn> company. Her core argument: the next frontier of AI is not generating more text or images. It is building machines that understand the three-dimensional physical world — that can navigate environments, understand how objects relate to each other, and simulate spaces before they're built.</p>
-                  <p class="text-kaindly-text leading-relaxed mt-3">Li positioned this not as a distant possibility but as an active area of development with real products in the pipeline. World Labs is backed by significant venture capital, the research comes out of Stanford, and the first applications are already being built for enterprises.</p>
-                </div>
-
-                <div>
-                  <p class="font-mono text-xs tracking-widest text-kaindly-purple-light uppercase mb-2">What This Means for You</p>
-                  <p class="text-kaindly-text leading-relaxed">Most AI tools you've heard of are <dfn data-definition tabindex="0">language models<span class="dfn-tooltip">An AI system trained on text that can read, write, summarize, and answer questions. ChatGPT is the most well-known example.</span></dfn> — they read text, generate text, process images, create images. Fundamentally flat. But a lot of real work happens in physical space: warehouses, hospitals, construction sites, retail stores, manufacturing floors.</p>
-                  <p class="text-kaindly-text leading-relaxed mt-3">If this category matures the way language models did, it will reshape logistics and warehouse automation, product design and prototyping, surgical planning, architecture and construction, and retail — potentially within 36 months. If your organization's AI strategy starts and ends with chatbots and document summarizers, the landscape just got a lot bigger. Most organizations are not tracking spatial AI yet. It's worth understanding now, before it becomes urgent.</p>
-                </div>
-
-                <div class="bg-kaindly-lime/5 rounded-lg p-4 border border-kaindly-lime/20">
-                  <p class="font-mono text-xs tracking-widest text-kaindly-lime uppercase mb-2">One Thing to Try</p>
-                  <p class="text-kaindly-text-bright leading-relaxed">Think about where your team does work that involves physical spaces or objects. Ask: <em class="text-white not-italic font-medium">"If AI could 'see' and understand our physical workspace, what would we do differently?"</em> You don't need to buy anything — just start noticing where space matters in your work.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- ─── Card 2: The AI Stack ─── -->
-        <article class="bg-kaindly-card rounded-xl border border-kaindly-border overflow-hidden mb-8 card-glow transition-shadow duration-300">
-          <div class="md:flex md:flex-row-reverse">
-            <div class="md:w-2/5 relative">
-              <img
-                src="images/5-layer.jpeg"
-                alt="HUMAN[X] main stage during the Five-Layer AI Stack panel"
-                class="w-full h-56 md:h-full object-cover img-treatment"
-                loading="lazy"
-              >
-              <div class="absolute top-4 right-4 bg-kaindly-dark/80 backdrop-blur-sm px-3 py-1.5 rounded-md">
-                <span class="font-mono text-kaindly-lime text-2xl font-bold">02</span>
-              </div>
-            </div>
-            <div class="md:w-3/5 p-6 sm:p-8 border-l-4 border-kaindly-purple">
-              <h3 class="text-xl sm:text-2xl font-bold text-white mb-5">AI Is Not One Thing — It's Five</h3>
-
-              <div class="space-y-5">
-                <div>
-                  <p class="font-mono text-xs tracking-widest text-kaindly-lime uppercase mb-2">What Happened</p>
-                  <p class="text-kaindly-text leading-relaxed">A panel featuring NVIDIA's Bill Catanzaro, Fireworks AI CEO Lin Qiao, and Augment Code CEO Denis Yarats broke AI down into five layers — what they called the <dfn data-definition tabindex="0">AI stack<span class="dfn-tooltip">The layers of technology that make AI work — from the computer chips at the bottom to the apps you use at the top. Like a building: foundation, structure, plumbing, wiring, and the rooms you live in.</span></dfn>. Each panelist represented a different layer: Catanzaro spoke from NVIDIA's position at the bottom (chips and <dfn data-definition tabindex="0">compute<span class="dfn-tooltip">The raw computing power (usually specialized chips called GPUs) needed to train and run AI. It's expensive, and who controls it matters.</span></dfn>), Lin Qiao represented the serving and speed layer, and Yarats represented the top — the apps you actually use.</p>
-                </div>
-
-                <!-- 5-Layer Deep Dive -->
-                <div class="bg-kaindly-card-alt rounded-lg border border-kaindly-border p-5">
-                  <p class="font-mono text-xs tracking-widest text-kaindly-purple-light uppercase mb-4">The Five Layers, Explained</p>
-                  <div class="space-y-4">
-                    <div class="flex gap-3">
-                      <span class="font-mono text-kaindly-lime font-bold text-sm mt-0.5 shrink-0">L1</span>
-                      <div>
-                        <p class="text-white font-semibold text-sm">Chips & Compute</p>
-                        <p class="text-kaindly-text text-sm leading-relaxed">The physical hardware — specialized computer chips (GPUs) that do the heavy math AI requires. NVIDIA dominates this layer and commands extraordinary pricing power. Every layer above depends on this one.</p>
-                      </div>
-                    </div>
-                    <div class="w-full h-px bg-kaindly-border/50"></div>
-                    <div class="flex gap-3">
-                      <span class="font-mono text-kaindly-lime font-bold text-sm mt-0.5 shrink-0">L2</span>
-                      <div>
-                        <p class="text-white font-semibold text-sm">Model Training</p>
-                        <p class="text-kaindly-text text-sm leading-relaxed">Where AI models are built by feeding them enormous amounts of data. This is extremely expensive — millions of dollars per model — and only a handful of companies (OpenAI, Google, Anthropic, Meta) operate at this scale.</p>
-                      </div>
-                    </div>
-                    <div class="w-full h-px bg-kaindly-border/50"></div>
-                    <div class="flex gap-3">
-                      <span class="font-mono text-kaindly-lime font-bold text-sm mt-0.5 shrink-0">L3</span>
-                      <div>
-                        <p class="text-white font-semibold text-sm">Serving & <dfn data-definition tabindex="0">Inference<span class="dfn-tooltip">When an AI model actually runs and gives you an answer. Every time you ask ChatGPT a question, that's inference. It costs money each time.</span></dfn></p>
-                        <p class="text-kaindly-text text-sm leading-relaxed">Where the trained model actually runs and gives you answers. Every time you ask an AI a question, that's inference — and it costs money each time. Companies like Fireworks AI work to make this faster and cheaper.</p>
-                      </div>
-                    </div>
-                    <div class="w-full h-px bg-kaindly-border/50"></div>
-                    <div class="flex gap-3">
-                      <span class="font-mono text-kaindly-lime font-bold text-sm mt-0.5 shrink-0">L4</span>
-                      <div>
-                        <p class="text-white font-semibold text-sm"><dfn data-definition tabindex="0">Fine-Tuning<span class="dfn-tooltip">Taking a general-purpose AI model and customizing it with your own data so it works better for your specific needs.</span></dfn> & Customization</p>
-                        <p class="text-kaindly-text text-sm leading-relaxed">Taking a general-purpose model and customizing it with your company's own data so it works better for your specific needs. This is where AI goes from "generic" to "useful for your business."</p>
-                      </div>
-                    </div>
-                    <div class="w-full h-px bg-kaindly-border/50"></div>
-                    <div class="flex gap-3">
-                      <span class="font-mono text-kaindly-lime font-bold text-sm mt-0.5 shrink-0">L5</span>
-                      <div>
-                        <p class="text-white font-semibold text-sm">Applications</p>
-                        <p class="text-kaindly-text text-sm leading-relaxed">The tools you actually see and use — ChatGPT, Copilot, Jasper, the AI features in your CRM. This is the layer most people think of when they say "AI." It sits on top of all four layers below it.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <p class="font-mono text-xs tracking-widest text-kaindly-purple-light uppercase mb-2">What This Means for You</p>
-                  <p class="text-kaindly-text leading-relaxed">When most people say "we're using AI," they mean they bought an app — the top layer. But when that app is slow, the problem might live at Layer 3 (inference). When it's expensive, it might be a Layer 1 problem (compute). When it gives bad answers, it might need work at Layer 4 (fine-tuning). These are different problems with different solutions, and mixing them up leads to bad purchasing decisions and wasted money.</p>
-                  <p class="text-kaindly-text leading-relaxed mt-3">Each layer has its own cost structure, its own vendors, and its own dynamics. NVIDIA sits at the bottom and commands extraordinary pricing power — every layer above depends on them. The further up the stack you go, the less control you have over your own costs. You don't need to become an engineer — but knowing that your vendor operates on one specific layer, and that problems at a different layer require a different kind of fix, changes how you evaluate tools, negotiate contracts, and diagnose issues.</p>
-                </div>
-
-                <div class="bg-kaindly-lime/5 rounded-lg p-4 border border-kaindly-lime/20">
-                  <p class="font-mono text-xs tracking-widest text-kaindly-lime uppercase mb-2">One Thing to Try</p>
-                  <p class="text-kaindly-text-bright leading-relaxed">Next time your team is evaluating an AI tool, ask: <em class="text-white not-italic font-medium">"What exactly are we paying for when we pay for this?"</em> Is it the computing power? The model itself? The customization? The app on top? If no one can answer clearly, that's a sign you're buying something you don't fully understand yet — and that's worth fixing before you sign.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- ─── Card 3: Marketing ─── -->
-        <article class="bg-kaindly-card rounded-xl border border-kaindly-border overflow-hidden mb-8 card-glow transition-shadow duration-300">
-          <div class="md:flex">
-            <div class="md:w-2/5 relative">
-              <img
-                src="images/marketing.jpeg"
-                alt="AI for Marketing session at HumanX 2026"
-                class="w-full h-56 md:h-full object-cover img-treatment"
-                loading="lazy"
-              >
-              <div class="absolute top-4 left-4 bg-kaindly-dark/80 backdrop-blur-sm px-3 py-1.5 rounded-md">
-                <span class="font-mono text-kaindly-lime text-2xl font-bold">03</span>
-              </div>
-            </div>
-            <div class="md:w-3/5 p-6 sm:p-8 border-l-4 border-kaindly-purple">
-              <h3 class="text-xl sm:text-2xl font-bold text-white mb-5">One Industry Already Runs on AI. Yours Might Be Next.</h3>
-
-              <div class="space-y-5">
-                <div>
-                  <p class="font-mono text-xs tracking-widest text-kaindly-lime uppercase mb-2">What Happened</p>
-                  <p class="text-kaindly-text leading-relaxed">The marketing track at HumanX ran all day with 15+ speakers — from PJ Pereira's keynote on creative AI to sessions on <dfn data-definition tabindex="0">personalization<span class="dfn-tooltip">Using data about a specific person to tailor what they see, read, or experience. AI makes this possible at massive scale.</span></dfn>, content workflows, brand strategy, and the operational mechanics of AI-augmented teams. The message was clear: marketing teams aren't experimenting with AI anymore. They're running on it.</p>
-                  <p class="text-kaindly-text leading-relaxed mt-3">Speakers described production environments where AI handles first-draft content creation, audience segmentation, <dfn data-definition tabindex="0">A/B testing<span class="dfn-tooltip">Showing two different versions of something (an email, a webpage, an ad) to different groups and measuring which performs better.</span></dfn> at scale, real-time personalization, and performance analytics. These aren't pilot programs — they're how the work gets done now.</p>
-                </div>
-
-                <div>
-                  <p class="font-mono text-xs tracking-widest text-kaindly-purple-light uppercase mb-2">What This Means for You</p>
-                  <p class="text-kaindly-text leading-relaxed">The most important thing marketing teams have figured out isn't which AI tools to use — it's how to redesign their entire workflow to move faster. The human role is shifting from creator to curator and editor: setting the creative direction, reviewing AI-generated output, making judgment calls that require brand sensitivity and cultural context. People aren't being replaced — but their job description is changing.</p>
-                  <p class="text-kaindly-text leading-relaxed mt-3">This matters even if you're not in marketing. Marketing is the canary in the coal mine. The patterns forming there — how teams restructure around AI tools, where human judgment remains essential, how output quality is measured, what happens to headcount and skill requirements — are the same patterns that will play out in finance, operations, HR, legal, and every other knowledge-work function over the next 18–36 months. The transition from "we have an AI tool" to "AI is built into how we work" is the hardest step, and marketing is the first function to cross it at scale.</p>
-                </div>
-
-                <div class="bg-kaindly-lime/5 rounded-lg p-4 border border-kaindly-lime/20">
-                  <p class="font-mono text-xs tracking-widest text-kaindly-lime uppercase mb-2">One Thing to Try</p>
-                  <p class="text-kaindly-text-bright leading-relaxed">Find someone on your company's marketing team (or a peer at another company) and ask them: <em class="text-white not-italic font-medium">"What does your AI workflow actually look like day to day?"</em> Their answer will tell you more about where AI adoption is heading than any conference keynote.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-      </section>
-
-      <!-- ═══════════ ON THE GROUND — Photo Break ═══════════ -->
-      <section class="py-10 sm:py-14 section-fade">
-        <p class="font-mono text-xs tracking-widest text-kaindly-purple-light uppercase mb-6">On the Ground</p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div class="rounded-lg overflow-hidden">
-            <img
-              src="images/IMG_9967.jpg"
-              alt="Leanna and colleague outside HumanX venue in San Francisco"
-              class="w-full h-64 sm:h-72 object-cover img-treatment"
-              loading="lazy"
-            >
-          </div>
-          <div class="rounded-lg overflow-hidden">
-            <img
-              src="images/IMG_0002.jpg"
-              alt="Attendees networking at HumanX 2026"
-              class="w-full h-64 sm:h-72 object-cover img-treatment"
-              loading="lazy"
-            >
-          </div>
-        </div>
-      </section>
-
-      <!-- ═══════════ YOUR NEXT STEP ═══════════ -->
-      <section class="py-14 sm:py-20 section-fade">
-        <div class="relative rounded-xl border-2 border-kaindly-lime/30 bg-kaindly-card p-6 sm:p-10 lime-glow">
-          <div class="absolute -top-4 left-6 sm:left-10 bg-kaindly-dark px-4 py-1">
-            <p class="font-mono text-xs tracking-widest text-kaindly-lime uppercase font-bold">Your Next Step</p>
-          </div>
-
-          <div class="space-y-6 mt-2">
-            <div>
-              <h3 class="text-xl sm:text-2xl font-bold text-white mb-3">One question to ask your team this week</h3>
-              <p class="text-kaindly-text-bright leading-relaxed text-base sm:text-lg italic">
-                "Do we actually know which part of AI we're paying for — and whether it's the part that matters most for our work?"
-              </p>
-            </div>
-
-            <div class="w-full h-px bg-kaindly-border"></div>
-
-            <div>
-              <h3 class="text-xl sm:text-2xl font-bold text-white mb-3">One decision to sit with</h3>
-              <p class="text-kaindly-text-bright leading-relaxed text-base sm:text-lg">
-                AI is a stack of layers. If you only understand the top layer (the app you bought), you can't diagnose problems or negotiate well. <span class="text-kaindly-lime font-semibold">That's worth 15 minutes of your time this week.</span>
-              </p>
-            </div>
-
-            <div class="w-full h-px bg-kaindly-border"></div>
-
-            <p class="text-kaindly-text leading-relaxed">
-              That's what KAINDLY helps with. Not selling you AI. Helping you understand it.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ═══════════ TRY THIS — CTA ═══════════ -->
-      <section class="py-14 sm:py-20 section-fade">
-        <div class="bg-kaindly-card-alt rounded-xl border border-kaindly-border p-6 sm:p-10">
-          <p class="font-mono text-xs tracking-widest text-kaindly-purple-light uppercase mb-3">Try This</p>
-          <h3 class="text-2xl sm:text-3xl font-bold text-white mb-5">Take the Assessment</h3>
-
           <p class="text-kaindly-text-bright leading-relaxed text-base sm:text-lg mb-4">
-            Not sure where you stand with AI? KAINDLY's AI Readiness Assessment gives you a personalized report on your current comfort level, strengths, and where to focus next.
+            KAINDLY is an AI fluency and adoption accelerator. We help senior leaders and their teams understand AI well enough to make confident decisions about it — without needing to become engineers.
           </p>
-
-          <p class="text-kaindly-text-bright leading-relaxed text-base sm:text-lg mb-6">
-            You don't need to know everything.<br>
-            You just need to start.
+          <p class="text-kaindly-text leading-relaxed mb-4">
+            Most AI education is built for technical people. Most AI marketing is built to sell you something. KAINDLY sits between the stage and the street — translating what's actually happening in AI into language that's clear without being simple, and honest without being overwhelming.
           </p>
-
-          <p class="text-kaindly-text leading-relaxed mb-8">
-            KAINDLY helps professionals build real AI fluency — at your own pace, in your own context, without the jargon.
+          <p class="text-kaindly-text leading-relaxed">
+            We attend the conferences, read the research, and talk to the people building this technology — so you get the signal without the noise.
           </p>
-
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href="https://www.kaindly.ai/assessment" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 bg-kaindly-lime text-kaindly-dark font-bold rounded-lg hover:bg-kaindly-lime/90 transition-colors text-sm sm:text-base">
-              Take the AI Readiness Assessment &rarr;
-            </a>
-            <a href="https://www.kaindly.ai" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 border border-kaindly-lime/40 text-kaindly-lime font-semibold rounded-lg hover:bg-kaindly-lime/10 transition-colors text-sm sm:text-base">
-              Learn More About KAINDLY
-            </a>
-          </div>
         </div>
-      </section>
-
-    </div><!-- end main content column -->
-
-    <!-- ─── DESKTOP GLOSSARY SIDEBAR ─── -->
-    <aside class="hidden lg:block">
-      <div class="lg:sticky lg:top-16 self-start">
-        <div class="bg-kaindly-card rounded-xl border border-kaindly-border p-5 glossary-sidebar">
-          <p class="font-mono text-xs tracking-widest text-kaindly-lime uppercase font-bold mb-4">Quick Glossary</p>
-          <dl>
-            <dt>AI</dt>
-            <dd>Software that can learn from data and make decisions, rather than just following fixed rules.</dd>
-            <dt>Language Model</dt>
-            <dd>An AI trained on text that can read, write, and answer questions. ChatGPT is the best-known example.</dd>
-            <dt>Spatial AI</dt>
-            <dd>AI that understands physical, 3D spaces — rooms, buildings, and how objects relate to each other.</dd>
-            <dt>AI Stack</dt>
-            <dd>The layers of tech that make AI work — from chips at the bottom to apps at the top.</dd>
-            <dt>Inference</dt>
-            <dd>When an AI model runs and gives you an answer. Each time costs money.</dd>
-            <dt>Compute</dt>
-            <dd>The raw computing power (specialized chips) needed to train and run AI.</dd>
-            <dt>Fine-Tuning</dt>
-            <dd>Customizing a general AI model with your own data so it works better for your needs.</dd>
-            <dt>Generative AI</dt>
-            <dd>AI that creates new content — text, images, video, code — rather than just analyzing data.</dd>
-            <dt>Personalization</dt>
-            <dd>Using data about a person to tailor what they see or experience, at massive scale.</dd>
-            <dt>A/B Testing</dt>
-            <dd>Showing two versions of something to different groups and measuring which performs better.</dd>
-          </dl>
+        <div class="md:w-1/2">
+          <div class="bg-kaindly-card rounded-xl border border-kaindly-border p-6 sm:p-8">
+            <p class="font-mono text-xs tracking-widest text-kaindly-lime uppercase mb-4">What We Do</p>
+            <div class="space-y-4">
+              <div class="flex gap-3">
+                <div class="w-1 bg-kaindly-purple rounded-full shrink-0"></div>
+                <div>
+                  <p class="text-white font-semibold text-sm">AI Readiness Assessment</p>
+                  <p class="text-kaindly-text text-sm">A personalized report on where you stand, what's working, and where to focus next.</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <div class="w-1 bg-kaindly-purple rounded-full shrink-0"></div>
+                <div>
+                  <p class="text-white font-semibold text-sm">Executive AI Fluency</p>
+                  <p class="text-kaindly-text text-sm">Build the understanding you need to lead AI adoption — not just approve it.</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <div class="w-1 bg-kaindly-purple rounded-full shrink-0"></div>
+                <div>
+                  <p class="text-white font-semibold text-sm">Adoption Strategy</p>
+                  <p class="text-kaindly-text text-sm">Move from "we should use AI" to "here's how we're using AI" — with a plan that fits your organization.</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <div class="w-1 bg-kaindly-purple rounded-full shrink-0"></div>
+                <div>
+                  <p class="text-white font-semibold text-sm">Live Coverage & Translation</p>
+                  <p class="text-kaindly-text text-sm">We go to the conferences and read the research so you get what matters — in language that makes sense.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </aside>
+    </div>
+  </section>
 
-  </div><!-- end two-column layout -->
+  <!-- ═══════════ CTA ═══════════ -->
+  <section class="py-14 sm:py-20 section-fade">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="relative rounded-xl border-2 border-kaindly-lime/30 bg-kaindly-card p-6 sm:p-10 lime-glow text-center">
+        <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4">Not sure where you stand with AI?</h3>
+        <p class="text-kaindly-text-bright leading-relaxed text-base sm:text-lg mb-3 max-w-2xl mx-auto">
+          KAINDLY's AI Readiness Assessment gives you a personalized report on your current comfort level, strengths, and where to focus next.
+        </p>
+        <p class="text-kaindly-text leading-relaxed mb-8 max-w-2xl mx-auto">
+          You don't need to know everything. You just need to start.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://www.kaindly.ai/assessment" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 bg-kaindly-lime text-kaindly-dark font-bold rounded-lg hover:bg-kaindly-lime/90 transition-colors text-sm sm:text-base">
+            Take the AI Readiness Assessment &rarr;
+          </a>
+          <a href="https://www.kaindly.ai" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 border border-kaindly-lime/40 text-kaindly-lime font-semibold rounded-lg hover:bg-kaindly-lime/10 transition-colors text-sm sm:text-base">
+            Learn More About KAINDLY
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ═══════════ FOOTER ═══════════ -->
   <footer class="border-t border-kaindly-border mt-14">
-    <!-- Author bar -->
     <div class="max-w-5xl mx-auto px-4 sm:px-6 py-8">
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <p class="text-white font-semibold">Leanna Baker Williams</p>
-          <p class="text-sm text-kaindly-text">Co-Founder & COO, KAINDLY</p>
+          <p class="text-white font-semibold">KAINDLY</p>
+          <p class="text-sm text-kaindly-text">AI Fluency & Adoption Accelerator</p>
         </div>
-        <p class="text-sm text-kaindly-text/60 italic max-w-md">This is the plain-language version of KAINDLY's HumanX 2026 Day 1 readout. We attend the conferences so you get the signal without the noise.</p>
+        <p class="text-sm text-kaindly-text/60 italic max-w-md">We attend the conferences so you get the signal without the noise. Plain-language readouts from HumanX 2026.</p>
       </div>
     </div>
 
-    <!-- Bottom bar -->
     <div class="bg-kaindly-dark border-t border-kaindly-border">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
         <span class="font-mono font-bold text-sm tracking-wider text-kaindly-lime">KAINDLY</span>
@@ -580,7 +388,6 @@
       </div>
     </div>
 
-    <!-- Purple accent bar -->
     <div class="h-1 bg-kaindly-purple"></div>
   </footer>
 
