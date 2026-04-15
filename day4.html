@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KAINDLY at HumanX — Day 4 | The Plain-Language Version</title>
+  <meta name="description" content="Day 4 at the biggest AI conference — what actually happened and what it means for your work. The plain-language readout from KAINDLY.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'kaindly-purple': '#5A2FA8',
+            'kaindly-purple-light': '#7B4FCC',
+            'kaindly-lime': '#C8FF00',
+            'kaindly-dark': '#0D0D1A',
+            'kaindly-card': '#151528',
+            'kaindly-card-alt': '#1A1A33',
+            'kaindly-border': '#2A2A4A',
+            'kaindly-text': '#B8B8D0',
+            'kaindly-text-bright': '#E0E0F0',
+          },
+          fontFamily: {
+            'sans': ['Inter', 'system-ui', 'sans-serif'],
+            'mono': ['JetBrains Mono', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0D0D1A;
+      color: #B8B8D0;
+    }
+    .gradient-hero {
+      background: linear-gradient(135deg, #0D0D1A 0%, #1a0d2e 40%, #0D0D1A 100%);
+    }
+    .card-glow:hover {
+      box-shadow: 0 0 30px rgba(90,47,168,0.15);
+    }
+    .lime-glow {
+      box-shadow: 0 0 20px rgba(200,255,0,0.1);
+    }
+    .section-fade {
+      border-top: 1px solid rgba(90,47,168,0.2);
+    }
+    .img-treatment {
+      filter: brightness(0.95) contrast(1.05);
+    }
+
+    /* -- Glossary tooltip styles -- */
+    dfn[data-definition] {
+      font-style: normal;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-decoration-color: #7B4FCC;
+      text-underline-offset: 3px;
+      cursor: help;
+      position: relative;
+      color: #E0E0F0;
+    }
+    dfn[data-definition]::after {
+      content: ' (?)';
+      font-size: 0.7em;
+      color: #7B4FCC;
+      font-weight: 600;
+      vertical-align: super;
+    }
+    /* Mobile: tooltip below the term, full-width constrained */
+    dfn[data-definition] .dfn-tooltip {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      right: auto;
+      transform: none;
+      background: #1A1A33;
+      border: 1px solid #5A2FA8;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: #E0E0F0;
+      width: max-content;
+      max-width: min(280px, 80vw);
+      z-index: 40;
+      box-shadow: 0 4px 20px rgba(90,47,168,0.25);
+      pointer-events: none;
+    }
+    dfn[data-definition] .dfn-tooltip::after {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 20px;
+      border: 6px solid transparent;
+      border-bottom-color: #5A2FA8;
+    }
+    /* Desktop: tooltip above the term, centered */
+    @media (min-width: 768px) {
+      dfn[data-definition] .dfn-tooltip {
+        top: auto;
+        bottom: calc(100% + 8px);
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+      }
+      dfn[data-definition] .dfn-tooltip::after {
+        bottom: auto;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 6px solid transparent;
+        border-top-color: #5A2FA8;
+        border-bottom-color: transparent;
+      }
+    }
+    dfn[data-definition]:hover .dfn-tooltip,
+    dfn[data-definition]:focus .dfn-tooltip {
+      display: block;
+    }
+
+    /* -- Glossary sidebar -- */
+    .glossary-sidebar {
+      font-size: 0.875rem;
+    }
+    .glossary-sidebar dt {
+      color: #C8FF00;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 1rem;
+    }
+    .glossary-sidebar dt:first-child {
+      margin-top: 0;
+    }
+    .glossary-sidebar dd {
+      color: #B8B8D0;
+      margin-left: 0;
+      margin-top: 0.25rem;
+      line-height: 1.5;
+    }
+
+    @media print {
+      body { background: white; color: #1a1a1a; }
+      .no-print { display: none; }
+    }
+  </style>
+</head>
+<body class="font-sans antialiased">
+
+  <!-- =========== HEADER BAR =========== -->
+  <header class="fixed top-0 w-full z-50 bg-kaindly-dark/90 backdrop-blur-md border-b border-kaindly-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-12 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="font-mono font-bold text-sm tracking-wider text-kaindly-lime">KAINDLY</span>
+        <span class="text-kaindly-text/40 text-xs">&times;</span>
+        <span class="font-mono text-xs tracking-widest text-kaindly-text/60 uppercase">Live Coverage</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="font-mono text-xs tracking-widest text-kaindly-text/60 uppercase hover:text-kaindly-lime transition-colors hidden sm:block">All Days</a>
+        <a href="day3.html" class="font-mono text-xs tracking-widest text-kaindly-lime uppercase hover:text-kaindly-lime/80 transition-colors hidden sm:block">&larr; Day 3</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========== HERO SECTION =========== -->
+  <section class="gradient-hero pt-20 pb-16 sm:pt-24 sm:pb-20 relative overflow-hidden">
+    <!-- Decorative circles -->
+    <div class="absolute top-0 right-0 w-72 h-72 rounded-full bg-green-900/20 blur-3xl -translate-y-1/3 translate-x-1/4"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-purple-900/20 blur-3xl translate-y-1/2 -translate-x-1/4"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+      <!-- Hero image -->
+      <div class="mb-10 rounded-lg overflow-hidden">
+        <img
+          src="images/day2-header.jpeg"
+          alt="HumanX 2026 Day 4 conference stage"
+          class="w-full h-48 sm:h-64 md:h-80 object-cover img-treatment"
+          loading="eager"
+        >
+      </div>
+
+      <!-- Big title -->
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[0.95] mb-6">
+        <span class="text-white">HUMAN</span><span class="text-kaindly-lime">[X]</span>
+      </h1>
+      <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-8">
+        <span class="font-mono text-sm sm:text-base tracking-wider text-kaindly-text/70 uppercase">San Francisco</span>
+        <span class="font-mono text-sm sm:text-base tracking-wider text-kaindly-lime font-bold uppercase">April 6–9, 2026</span>
+      </div>
+
+      <!-- Divider -->
+      <div class="w-full h-px bg-gradient-to-r from-kaindly-purple via-kaindly-purple/40 to-transparent mb-8"></div>
+
+      <!-- Article title & meta -->
+      <p class="font-mono text-xs tracking-widest text-kaindly-purple-light uppercase mb-4">Day 4 — The Plain-Language Version</p>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-snug max-w-4xl mb-4">
+        The final day. AI stopped being a strategy conversation and became an operations question: who's accountable, what's the org chart, and where does the money go?
+      </h2>
+      <p class="text-lg text-kaindly-text-bright/80 max-w-3xl mb-6 font-light italic">
+        Day 4 — April 9, 2026
+      </p>
+      <div class="flex flex-wrap items-center gap-3 text-sm text-kaindly-text/60 font-mono">
+        <span>April 9, 2026</span>
+        <span class="text-kaindly-purple">|</span>
+        <span>Leanna Baker Williams</span>
+        <span class="text-kaindly-purple">|</span>
+        <span>KAINDLY Collective</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========== WHY THIS EXISTS =========== -->
+  <section class="py-14 sm:py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="bg-kaindly-card rounded-xl border border-kaindly-border p-6 sm:p-8">
+        <p class="font-mono text-xs tracking-widest text-kaindly-lime uppercase mb-4">Why This Exists</p>
+        <p class="text-xl sm:text-2xl font-bold text-white leading-snug mb-4">AI conferences talk to the industry.<br>We translate it for everyone else.</p>
+        <p class="text-kaindly-text leading-relaxed mb-3">We're not a research firm, and we're not positioning ourselves as conference translators. We came to listen, learn, and engage. What became clear is that many people who couldn't attend still wanted a clear view of what's actually being said and done in these rooms. So we're sharing what we're seeing and hearing, in plain language, to make it more accessible and useful.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========== OPENING =========== -->
+  <section class="pb-14 sm:pb-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-kaindly-text-bright font-light">
+        Day 4 was the day the conference got practical. No more hypotheticals. Speaker after speaker — from Uber's CTO to Zoom's AI lead to the CEO of Datadog — talked about what's actually happening inside their organizations right now. The takeaway wasn't about what AI might do someday. It was about what it's already doing, who's accountable for it, and what the org chart looks like when machines start doing the work. Three things stood out.
+      </p>
+    </div>
+  </section>
+
+  <!-- =========== MOBILE GLOSSARY (collapsible, shows < lg) =========== -->
+  <div class="lg:hidden max-w-5xl mx-auto px-4 sm:px-6 mb-8">
+    <details class="bg-kaindly-card rounded-xl border border-kaindly-border overflow-hidden">
+      <summary class="px-5 py-4 cursor-pointer font-mono text-xs tracking-widest text-kaindly-lime uppercase font-bold flex items-center justify-between">
+        Quick Glossary — 10 Terms You'll See Below
+        <svg class="w-4 h-4 text-kaindly-lime transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </summary>
+      <div class="px-5 pb-5 glossary-sidebar">
+        <dl>
+          <dt>Token Economics</dt>
+          <dd>The cost structure of running AI — measured in tokens (roughly one word each). Companies now track token spending like they track cloud computing costs.</dd>
+          <dt>Agent</dt>
+          <dd>An AI system that doesn't just answer questions but takes actions — booking meetings, updating databases, writing code — with varying degrees of human oversight.</dd>
+          <dt>Org Diamond</dt>
+          <dd>An emerging organizational shape where strategy (top) and AI agents (edges) grow, while the middle management/execution layer compresses.</dd>
+          <dt>Governance Framework</dt>
+          <dd>A structured set of policies, processes, and accountability measures for how an organization uses AI responsibly.</dd>
+          <dt>Inference Cost</dt>
+          <dd>The cost of running an AI model after it's been built — every question you ask, every response it generates, costs money in compute.</dd>
+          <dt>Data Provenance</dt>
+          <dd>Knowing where your AI's training data came from, how it was collected, and whether it's representative and unbiased.</dd>
+          <dt>Human in the Loop</dt>
+          <dd>A system design where AI does the work but a human reviews, approves, or corrects before actions are taken. Critical for high-stakes decisions.</dd>
+          <dt>Shadow AI</dt>
+          <dd>When employees use AI tools without IT's knowledge or approval — the new version of "shadow IT" that creates security and governance risks.</dd>
+          <dt>Heterogeneous Compute</dt>
+          <dd>Using different types of specialized hardware (GPUs, custom chips, CPUs) together for AI, rather than relying on one type. More efficient and cost-effective.</dd>
+          <dt>Decision Intelligence</dt>
+          <dd>AI systems that help leaders make strategic decisions by connecting data across departments and surfacing trade-offs in real time.</dd>
+        </dl>
+      </div>
+    </details>
+  </div>
+
+  <!-- =========== TWO-COLUMN LAYOUT: CONTENT + SIDEBAR =========== -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+
+    <!-- --- MAIN CONTENT COLUMN --- -->
+    <div>
+
+      <!-- =========== THREE TAKEAWAYS =========== -->
+      <section class="pb-14 sm:pb-20 section-fade">
+        <div class="mb-12 sm:mb-16">
+          <p class="font-mono text-xs tracking-widest text-kaindly-purple-light uppercase mb-3">What You Need to Know</p>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight">
+            THREE<br><span class="text-kaindly-lime">TAKEAWAYS</span>
+          </h2>
+        </div>
+
+        <!-- --- Card 1: AI Moved From Pilot to Production --- -->
+        <article class="bg-kaindly-card rounded-xl border border-kaindly-border overflow-hidden mb-8 card-glow transition-shadow duration-300">
+          <div class="md:flex">
+            <div class="md:w-2/5 relative">
+              <img
+                src="images/grove-theater-panel.jpg"
+                alt="Grove Theater panel at HumanX 2026 — Day 4 session on AI moving from pilot to production"
+                class="w-full h-56 md:h-full object-cover img-treatment"
+                loading="lazy"
+              >
+              <div class="absolute top-4 left-4 bg-kaindly-dark/80 backdrop-blur-sm px-3 py-1.5 rounded-md">
+                <span class="font-mono text-kaindly-lime text-2xl font-bold">01</span>
+              </div>
+            </div>
+            <div class="md:w-3/5 p-6 sm:p-8 border-l-4 border-kaindly-purple">
+              <p class="font-mono text-xs tracking-widest text-kaindly-text/60 uppercase mb-2">Completion &middot; Scale &middot; Real Numbers</p>
+              <h3 class="text-xl sm:text-2xl font-bold text-white mb-5">AI Moved From Pilot to Production</h3>
+
+              <div class="space-y-5">
+                <div>
+                  <p class="font-mono text-xs tracking-widest text-kaindly-lime uppercase mb-2">What Happened</p>
+                  <p class="text-kaindly-text leading-relaxed">The biggest companies in the world aren't experimenting with AI anymore — they're running on it. Uber's CTO revealed that 70% of their code is now AI-generated. A customer service policy project expected to take a year was finished in two weeks. Zoom announced that meetings now trigger automated task completion — updating your CRM, sending follow-ups, creating project tickets — all before the meeting ends. Pigment showed that financial modeling that took nine months now takes one day. And as <dfn data-definition tabindex="0">token<span class="dfn-tooltip">The cost structure of running AI — measured in tokens (roughly one word each). Companies now track token spending like they track cloud computing costs.</span></dfn> costs continue to drop, the economics of running these systems at scale are becoming viable for organizations of every size.</p>
+                </div>
+
+                <div>
+                  <p class="font-mono text-xs tracking-widest text-kaindly-purple-light uppercase mb-2">What This Means for You</p>
+                  <p class="text-kaindly-text leading-relaxed">The piloting phase is over. If your organization is still running 'AI experiments' or 'proof of concepts,' you're falling behind companies that have already integrated AI into daily operations. This doesn't mean you need to move recklessly — but it does mean the question has shifted from 'Should we use AI?' to 'Why aren't we using it yet?' The companies pulling ahead aren't the ones with the best technology. They're the ones that committed to deploying it, learned from the mistakes, and kept going.</p>
+                </div>
+
+                <div class="bg-kaindly-lime/5 rounded-lg p-4 border border-kaindly-lime/20">
+                  <p class="font-mono text-xs tracking-widest text-kaindly-lime uppercase mb-2">One Thing to Try</p>
+                  <p class="text-kaindly-text-bright leading-relaxed">Identify one workflow in your organization that currently takes weeks or months. Ask: <em class="text-white not-italic font-medium">"What would this look like if AI handled 80% of the execution and a human handled the judgment calls?"</em> That question alone will reveal where you're leaving time on the table.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- --- Card 2: The Organization Is Reshaping Around AI --- -->
+        <article class="bg-kaindly-card rounded-xl border border-kaindly-border overflow-hidden mb-8 card-glow transition-shadow duration-300">
+          <div class="md:flex md:flex-row-reverse">
+            <div class="md:w-2/5 relative">
+              <img
+                src="images/panel-speaker-green.jpg"
+                alt="HumanX 2026 Day 4 session on organizational reshaping around AI"
+                class="w-full h-56 md:h-full object-cover img-treatment"
+                loading="lazy"
+              >
+              <div class="absolute top-4 right-4 bg-kaindly-dark/80 backdrop-blur-sm px-3 py-1.5 rounded-md">
+                <span class="font-mono text-kaindly-lime text-2xl font-bold">02</span>
+              </div>
+            </div>
+            <div class="md:w-3/5 p-6 sm:p-8 border-l-4 border-kaindly-purple">
+              <p class="font-mono text-xs tracking-widest text-kaindly-text/60 uppercase mb-2">Org Design &middot; The Diamond &middot; Agents as Colleagues</p>
+              <h3 class="text-xl sm:text-2xl font-bold text-white mb-5">The Organization Is Reshaping Around AI</h3>
+
+              <div class="space-y-5">
+                <div>
+                  <p class="font-mono text-xs tracking-widest text-kaindly-lime uppercase mb-2">What Happened</p>
+                  <p class="text-kaindly-text leading-relaxed">Datadog's CEO (7,000 employees, 3,000 engineers) shared something striking: they're now hiring 'super junior' and 'super senior' — but less in the middle. Senior architects excel with AI because they're already practiced managers. Junior AI-native hires learn fast. The middle layer of experience is becoming less essential. Separately, Leena AI reported that in their deployed processes, 60% of people are no longer needed for that specific task — but 12% of those become 'human managers of <dfn data-definition tabindex="0">agent<span class="dfn-tooltip">An AI system that doesn't just answer questions but takes actions — booking meetings, updating databases, writing code — with varying degrees of human oversight.</span></dfn>s,' a role that didn't exist a year ago.</p>
+                </div>
+
+                <div>
+                  <p class="font-mono text-xs tracking-widest text-kaindly-purple-light uppercase mb-2">What This Means for You</p>
+                  <p class="text-kaindly-text leading-relaxed">The org chart is changing shape — from a triangle to a diamond. The top (strategy, direction) stays human. The bottom (production, execution) is increasingly handled by AI agents. The new growth is in the middle-edges: people who manage, train, and oversee AI systems — roles that increasingly rely on <dfn data-definition tabindex="0">decision intelligence<span class="dfn-tooltip">AI systems that help leaders make strategic decisions by connecting data across departments and surfacing trade-offs in real time.</span></dfn> to direct complex operations. If your role is primarily about executing established processes, the ground is shifting under you. If your role involves judgment, context, and managing complexity — you're becoming more valuable, not less. The question to ask: 'Am I building the skill of directing AI, or am I competing with it?'</p>
+                </div>
+
+                <div class="bg-kaindly-lime/5 rounded-lg p-4 border border-kaindly-lime/20">
+                  <p class="font-mono text-xs tracking-widest text-kaindly-lime uppercase mb-2">One Thing to Try</p>
+                  <p class="text-kaindly-text-bright leading-relaxed">Look at your team's work through the lens of 'judgment work' vs. 'process work.' Which tasks require human context, relationships, and strategic thinking? Which are repeatable and rule-based? <em class="text-white not-italic font-medium">The second category is where AI agents will arrive first.</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- --- Card 3: Governance Became a Competitive Advantage --- -->
+        <article class="bg-kaindly-card rounded-xl border border-kaindly-border overflow-hidden mb-8 card-glow transition-shadow duration-300">
+          <div class="md:flex">
+            <div class="md:w-2/5 relative">
+              <img
+                src="images/panel-closeup.jpg"
+                alt="HumanX 2026 Day 4 session on AI governance as competitive advantage"
+                class="w-full h-56 md:h-full object-cover img-treatment"
+                loading="lazy"
+              >
+              <div class="absolute top-4 left-4 bg-kaindly-dark/80 backdrop-blur-sm px-3 py-1.5 rounded-md">
+                <span class="font-mono text-kaindly-lime text-2xl font-bold">03</span>
+              </div>
+            </div>
+            <div class="md:w-3/5 p-6 sm:p-8 border-l-4 border-kaindly-purple">
+              <p class="font-mono text-xs tracking-widest text-kaindly-text/60 uppercase mb-2">Trust &middot; Accountability &middot; The New Table Stakes</p>
+              <h3 class="text-xl sm:text-2xl font-bold text-white mb-5">Governance Became a Competitive Advantage</h3>
+
+              <div class="space-y-5">
+                <div>
+                  <p class="font-mono text-xs tracking-widest text-kaindly-lime uppercase mb-2">What Happened</p>
+                  <p class="text-kaindly-text leading-relaxed"><dfn data-definition tabindex="0">Governance framework<span class="dfn-tooltip">A structured set of policies, processes, and accountability measures for how an organization uses AI responsibly.</span></dfn>s stopped being a compliance checkbox and became a business differentiator. Credo AI revealed they've catalogued 1,600 distinct AI risks — with mitigations for only 85% of them. A new Gartner study showed that only 40% of AI vendors now make it into production at Fortune 500 companies — the rest fail on trust, not capability. In healthcare, speakers revealed that most AI models give incorrect information about women's health because the training data is biased — women weren't included in most clinical trials until 1992. Without a <dfn data-definition tabindex="0">human in the loop<span class="dfn-tooltip">A system design where AI does the work but a human reviews, approves, or corrects before actions are taken. Critical for high-stakes decisions.</span></dfn>, these biased outputs go unchecked. And in hiring, Gartner predicts that by 2028, one in five job candidates worldwide will be fake.</p>
+                </div>
+
+                <div>
+                  <p class="font-mono text-xs tracking-widest text-kaindly-purple-light uppercase mb-2">What This Means for You</p>
+                  <p class="text-kaindly-text leading-relaxed">When you evaluate an AI vendor or tool, stop asking 'What can it do?' and start asking 'What happens when it's wrong?' The companies winning enterprise deals in 2026 aren't the ones with the best demos — they're the ones that can show rigorous testing, clear accountability, and transparent <dfn data-definition tabindex="0">data provenance<span class="dfn-tooltip">Knowing where your AI's training data came from, how it was collected, and whether it's representative and unbiased.</span></dfn>. Governance is no longer the thing that slows you down. It's the thing that lets you move fast without breaking trust. And as <dfn data-definition tabindex="0">inference<span class="dfn-tooltip">The cost of running an AI model after it's been built — every question you ask, every response it generates, costs money in compute.</span></dfn> costs drop and adoption scales, the stakes of getting governance wrong only get higher. If your organization doesn't have an AI governance framework, you're not just exposed to risk — you're losing deals to competitors who do.</p>
+                </div>
+
+                <div class="bg-kaindly-lime/5 rounded-lg p-4 border border-kaindly-lime/20">
+                  <p class="font-mono text-xs tracking-widest text-kaindly-lime uppercase mb-2">One Thing to Try</p>
+                  <p class="text-kaindly-text-bright leading-relaxed">Ask three questions about every AI tool your organization uses: <em class="text-white not-italic font-medium">(1) Where does the training data come from? (2) What happens when the AI is wrong — who is accountable? (3) Can we audit what it did and why?</em> If you can't get clear answers, that's your governance gap.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- =========== ON THE GROUND =========== -->
+      <section class="py-14 sm:py-20 section-fade">
+        <p class="font-mono text-xs tracking-widest text-kaindly-purple-light uppercase mb-6">On the Ground</p>
+        <div class="rounded-xl overflow-hidden">
+          <img
+            src="images/barbara-leanna-humanx.jpg"
+            alt="Barbara Salami and Leanna Baker Williams on the conference floor at HumanX 2026 in San Francisco"
+            class="w-full h-64 sm:h-96 object-cover img-treatment"
+            loading="lazy"
+          >
+        </div>
+        <p class="text-xs text-kaindly-text/40 mt-3 italic">Barbara and Leanna — on the ground at HumanX 2026, San Francisco</p>
+      </section>
+
+      <!-- =========== YOUR NEXT STEP =========== -->
+      <section class="py-14 sm:py-20 section-fade">
+        <div class="relative rounded-xl border-2 border-kaindly-lime/30 bg-kaindly-card p-6 sm:p-10 lime-glow">
+          <div class="absolute -top-4 left-6 sm:left-10 bg-kaindly-dark px-4 py-1">
+            <p class="font-mono text-xs tracking-widest text-kaindly-lime uppercase font-bold">Your Next Step</p>
+          </div>
+
+          <div class="space-y-6 mt-2">
+            <div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white mb-3">One question to ask your team this week</h3>
+              <p class="text-kaindly-text-bright leading-relaxed text-base sm:text-lg italic">
+                "If AI <dfn data-definition tabindex="0">agent<span class="dfn-tooltip">An AI system that doesn't just answer questions but takes actions — booking meetings, updating databases, writing code — with varying degrees of human oversight.</span></dfn>s are becoming members of your workforce, who in your organization is responsible for managing them?"
+              </p>
+            </div>
+
+            <div class="w-full h-px bg-kaindly-border"></div>
+
+            <div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white mb-3">One decision to sit with</h3>
+              <p class="text-kaindly-text-bright leading-relaxed text-base sm:text-lg">
+                The companies that moved fastest this year didn't just adopt AI — they reorganized around it. That means new roles, new budget lines, and new accountability structures. You don't need to do all of that this week. But you do need to start asking who owns AI decisions in your organization — because if nobody does, everyone will, and that's how you get <dfn data-definition tabindex="0">shadow AI<span class="dfn-tooltip">When employees use AI tools without IT's knowledge or approval — the new version of "shadow IT" that creates security and governance risks.</span></dfn>, wasted spend, and trust problems.
+              </p>
+            </div>
+
+            <div class="w-full h-px bg-kaindly-border"></div>
+
+            <p class="text-kaindly-text leading-relaxed">
+              That's what KAINDLY helps with. Not selling you AI. <span class="text-kaindly-lime font-semibold">Helping you understand it.</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========== TRY THIS -- CTA =========== -->
+      <section class="py-14 sm:py-20 section-fade">
+        <div class="bg-kaindly-card-alt rounded-xl border border-kaindly-border p-6 sm:p-10">
+          <p class="font-mono text-xs tracking-widest text-kaindly-purple-light uppercase mb-3">Try This</p>
+          <h3 class="text-2xl sm:text-3xl font-bold text-white mb-5">Take the Assessment</h3>
+
+          <p class="text-kaindly-text-bright leading-relaxed text-base sm:text-lg mb-4">
+            Not sure where you stand with AI? KAINDLY's AI Readiness Assessment gives you a personalized report on your current comfort level, strengths, and where to focus next.
+          </p>
+
+          <p class="text-kaindly-text-bright leading-relaxed text-base sm:text-lg mb-6">
+            You don't need to know everything.<br>
+            You just need to start.
+          </p>
+
+          <p class="text-kaindly-text leading-relaxed mb-8">
+            KAINDLY helps professionals build real AI fluency — at your own pace, in your own context, without the jargon.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="https://www.kaindly.ai/assessment" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 bg-kaindly-lime text-kaindly-dark font-bold rounded-lg hover:bg-kaindly-lime/90 transition-colors text-sm sm:text-base">
+              Take the AI Readiness Assessment &rarr;
+            </a>
+            <a href="https://www.kaindly.ai" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 border border-kaindly-lime/40 text-kaindly-lime font-semibold rounded-lg hover:bg-kaindly-lime/10 transition-colors text-sm sm:text-base">
+              Learn More About KAINDLY
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- end main content column -->
+
+    <!-- --- DESKTOP GLOSSARY SIDEBAR --- -->
+    <aside class="hidden lg:block">
+      <div class="lg:sticky lg:top-16 self-start">
+        <div class="bg-kaindly-card rounded-xl border border-kaindly-border p-5 glossary-sidebar">
+          <p class="font-mono text-xs tracking-widest text-kaindly-lime uppercase font-bold mb-4">Quick Glossary</p>
+          <dl>
+            <dt>Token Economics</dt>
+            <dd>The cost structure of running AI, measured in tokens (roughly one word each).</dd>
+            <dt>Agent</dt>
+            <dd>AI that takes actions — booking, updating, coding — not just answering questions.</dd>
+            <dt>Org Diamond</dt>
+            <dd>Strategy and AI agents grow; the middle execution layer compresses.</dd>
+            <dt>Governance Framework</dt>
+            <dd>Policies, processes, and accountability for how an organization uses AI responsibly.</dd>
+            <dt>Inference Cost</dt>
+            <dd>The cost of running an AI model — every question and response costs compute.</dd>
+            <dt>Data Provenance</dt>
+            <dd>Knowing where training data came from and whether it's representative and unbiased.</dd>
+            <dt>Human in the Loop</dt>
+            <dd>A person reviews and approves AI's work before it goes live. A built-in safety net.</dd>
+            <dt>Shadow AI</dt>
+            <dd>Employees using AI tools without IT's knowledge — the new "shadow IT."</dd>
+            <dt>Heterogeneous Compute</dt>
+            <dd>Using different specialized hardware types together for AI, rather than relying on one.</dd>
+            <dt>Decision Intelligence</dt>
+            <dd>AI that helps leaders make strategic decisions by connecting data and surfacing trade-offs.</dd>
+          </dl>
+        </div>
+      </div>
+    </aside>
+
+  </div><!-- end two-column layout -->
+
+  <!-- =========== FOOTER =========== -->
+  <footer class="border-t border-kaindly-border mt-14">
+    <!-- Author bar -->
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <p class="text-white font-semibold">Leanna Baker Williams</p>
+          <p class="text-sm text-kaindly-text">Co-Founder & COO, KAINDLY</p>
+        </div>
+        <p class="text-sm text-kaindly-text/60 italic max-w-md">This is the plain-language version of KAINDLY's HumanX 2026 Day 4 readout. We attend the conferences so you get the signal without the noise.</p>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="bg-kaindly-dark border-t border-kaindly-border">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+        <span class="font-mono font-bold text-sm tracking-wider text-kaindly-lime">KAINDLY</span>
+        <span class="font-mono text-xs tracking-widest text-kaindly-text/50 uppercase">Lead AI. Don't chase it.</span>
+      </div>
+    </div>
+
+    <!-- Purple accent bar -->
+    <div class="h-1 bg-kaindly-purple"></div>
+  </footer>
+
+</body>
+</html>

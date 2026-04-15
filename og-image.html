@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1200px;
+      height: 630px;
+      background: #0D0D1A;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      overflow: hidden;
+      position: relative;
+    }
+    .bg-glow {
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(90,47,168,0.3) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .bg-glow-2 {
+      position: absolute;
+      bottom: -80px;
+      left: -80px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(200,255,0,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 60px 70px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 3px;
+      color: #C8FF00;
+    }
+    .badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: rgba(184,184,208,0.6);
+      text-transform: uppercase;
+    }
+    .badge .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #C8FF00;
+    }
+    .badge .live {
+      color: #C8FF00;
+    }
+    .middle {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+    }
+    .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      letter-spacing: 3px;
+      color: #C8FF00;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-size: 52px;
+      font-weight: 900;
+      color: white;
+      line-height: 1.1;
+      max-width: 900px;
+    }
+    h1 span {
+      color: #C8FF00;
+    }
+    .subtitle {
+      font-size: 20px;
+      color: rgba(224,224,240,0.7);
+      font-weight: 300;
+      font-style: italic;
+      max-width: 700px;
+    }
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, rgba(200,255,0,0.4), rgba(90,47,168,0.4), transparent);
+    }
+    .bottom-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .dates {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+    }
+    .dates strong {
+      color: #C8FF00;
+      font-weight: 700;
+    }
+    .url {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: rgba(184,184,208,0.5);
+      letter-spacing: 1px;
+    }
+    .purple-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: #5A2FA8;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-glow"></div>
+  <div class="bg-glow-2"></div>
+  <div class="content">
+    <div class="top-bar">
+      <span class="logo">KAINDLY</span>
+      <span class="badge">
+        <span class="dot"></span>
+        <span class="live">Live from HumanX</span>
+      </span>
+    </div>
+    <div class="middle">
+      <p class="tag">Daily Readouts — The Plain-Language Version</p>
+      <h1>What happened at the biggest AI conference — and what it actually means <span>for your work</span></h1>
+      <p class="subtitle">You don't need to be technical to understand this. That's the whole point.</p>
+    </div>
+    <div class="divider"></div>
+    <div class="bottom-bar">
+      <span class="dates">San Francisco &nbsp;&bull;&nbsp; <strong>April 6–9, 2026</strong></span>
+      <span class="url">kaindly.ai</span>
+    </div>
+  </div>
+  <div class="purple-bar"></div>
+</body>
+</html>
